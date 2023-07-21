@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 * {
     padding: 0;
@@ -43,22 +44,55 @@
     }
 }
 
+.topic-animate {
+    position: absolute;
+    letter-spacing: 2px;
+    top: 20px;
+    width: fit-content;
+    white-space: nowrap;
+    font-size: 3em;
+    color: #6e6e6e;
+}
+
+.topic-animate::before {
+    content: "Weather-App";
+    position: absolute;
+    top: 0px;
+    width: 0%;
+    left: 0;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%,
+    20%,
+    100% {
+        width: 0;
+    }
+    80%,
+    90% {
+        width: 100%;
+    }
+}
+
 body {
-    background: #75C2F6;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("weather.avif") no-repeat center center/cover;
+    /**  background: url("https://source.unsplash.com/1600x900/?clouds") no-repeat center center/cover;**/
     font-family: 'Barlow', sans-serif;
 }
 
 .weather-card {
-    max-width: 650px;
+    max-width: 750px;
     width: 100%;
     margin: 0px auto;
-    height: 300px;
+    height: 350px;
     border-radius: 30px;
     display: flex;
     padding: 0px 10px;
@@ -71,9 +105,15 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 0px 20px;
-    margin: auto 10px;
+    margin: auto 20px;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px grey, -5px -5px 10px grey;
+    box-shadow: 6px 6px 10px grey, -5px -5px 10px grey;
+    transition: all 1s ease-in-out;
+}
+
+.location:hover {
+    transform: translateY(30px);
+    box-shadow: 6px 6px 8px rgb(162, 162, 162), -6px -6px 8px rgb(224, 224, 224);
 }
 
 .location-info {
@@ -89,4 +129,48 @@ body {
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgb(162, 162, 162), -6px -6px 8px rgb(224, 224, 224);
     font-family: 'Poppins', sans-serif;
+    transition: all 1s ease-in-out;
+}
+
+.location-info:hover {
+    transform: translateY(30px);
+    box-shadow: 6px 6px 5px rgba(8, 8, 8, 0.5), -6px -6px 5px rgba(40, 40, 40, 0.3);
+}
+
+.weather-prop-hide {
+    display: none;
+}
+
+#icon {
+    margin: 0px;
+}
+
+#icon>img {
+    width: 40px;
+    height: 40px;
+}
+
+#city-name {
+    margin: 5px 0px;
+    font-size: 1.7em;
+    font-weight: 900;
+    padding-bottom: 3px;
+}
+
+#ex-detail {
+    line-height: 2em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    background: grey;
+    width: 100%;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
 }
