@@ -63,7 +63,7 @@ async function getweather() {
             weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${weather_data.weather[0].icon}.png">`;
             currentDate.innerText = `Today's Date:${day}-${month}-${year}`
             cityName.innerText = `Weather in ${weather_data.name}`
-            extraDetail.innerHTML = `Feels-Like:${weather_data.main.feels_like}°C <br>  
+            extraDetail.innerHTML = `${weather_data.main.feels_like}°C <br>  
                                     ${weather_data.weather[0].main}  ||  ${weather_data.weather[0].description.toUpperCase()}`;
             humidity.innerText = `:${weather_data.main.humidity}%`;
             pressure.innerText = `:${weather_data.main.pressure} hPa`;
@@ -71,7 +71,7 @@ async function getweather() {
             windDirection.innerText = `:${weather_data.wind.deg}°`;
             precipitation.innerText = `:${weather_data.clouds.all}%`
             visibility.innerText = `:${calc(weather_data.visibility)}km`
-                //once each and every thing is loaded we will remove the loading class from weather-card
+                //once each and every thing is loaded we will remove the loading class from weather-card child
             document.querySelector(".location").classList.remove("loading");
             document.querySelector(".location-info").classList.remove("loading");
 
