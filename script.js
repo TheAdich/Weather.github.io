@@ -84,7 +84,7 @@ async function getweather() {
 
         function error(err) {
             alert("User has not given the permission to fetch location");
-            alert("we are redirectig you back to Github")
+            alert("we are redirecting you back to Github")
             window.open("https://github.com/TheAdich");
             window.close("index.html");
 
