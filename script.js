@@ -58,7 +58,7 @@ async function getweather() {
             if (visibility_data === undefined) visibility.classList.add("..weather-prop-hide");
             //genrating random images on loading related to user-location weather conditions
             document.body.style.background =
-                `url('https://source.unsplash.com/1600x900/?" +${weather_data.weather[0].main}+ "')`;
+                `url('https://source.unsplash.com/1600x900/?" +${weather_data.weather[0].main}+ "') no-repeat center center/cover`;
             //DOM Manipulation Starts Here
             weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/w/${weather_data.weather[0].icon}.png">`;
             currentDate.innerText = `Today's Date:${day}-${month}-${year}`
