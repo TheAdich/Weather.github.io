@@ -5,14 +5,14 @@ const loader = document.querySelector(".loader");
 
 
 // Function to hide and remove the loader
-/*const hideLoader = () => {
+const hideLoader = () => {
     loader.classList.add("loader-hide");
 
     loader.addEventListener("transitionend", () => {
         document.body.removeChild(loader);
     });
 };
-setTimeout(hideLoader, 1500);*/
+setTimeout(hideLoader, 3000);
 
 
 //js for the weather App
@@ -47,7 +47,7 @@ async function getweather() {
     try {
         //asking user to give permission to access his/her location
         async function weatherDetails(data) {
-            // console.log(msg.coords.longitude);
+            console.log(data.coords);
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${data.coords.latitude}&lon=${data.coords.longitude}&appid=803c984d5994f01c3ad050b277d19183&units=metric`);
             const weather_data = await response.json(); //this will give the weather updates of user location 
             console.log(weather_data);
@@ -71,6 +71,10 @@ async function getweather() {
             windDirection.innerText = `:${weather_data.wind.deg}°`;
             precipitation.innerText = `:${weather_data.clouds.all}%`
             visibility.innerText = `:${calc(weather_data.visibility)}km`
+                //once each and every thing is loaded we will remove the loading class from weather-card
+            document.querySelector(".location").classList.remove("loading");
+            document.querySelector(".location-info").classList.remove("loading");
+
 
         }
 
@@ -82,6 +86,7 @@ async function getweather() {
             alert("User has not given the permission to fetch location");
             alert("we are redirectig you back to Github")
             window.open("https://github.com/TheAdich");
+            window.close("index.html");
 
         }
 
@@ -91,6 +96,7 @@ async function getweather() {
     } catch (err) {
         console.log(err.name);
         alert(err);
+
     }
 }
 getweather();
