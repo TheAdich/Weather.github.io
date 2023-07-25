@@ -181,7 +181,7 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 30px;
     background: grey;
@@ -192,6 +192,7 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
+    
 }
 
 
