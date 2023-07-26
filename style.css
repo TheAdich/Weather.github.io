@@ -181,7 +181,7 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 30px;
     background: grey;
