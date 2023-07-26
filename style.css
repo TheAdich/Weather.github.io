@@ -197,11 +197,13 @@ footer a {
 
 /**media screen query for mobile version**/
 
-@media screen and (max-width:420px) {
+@media   (max-width:420px) and (orientation:portrait)  {
     .weather-card {
         flex-direction: column;
         height: 480px;
         align-items: center;
+    
+       
     }
     .location {
         width: 95%;
@@ -217,5 +219,15 @@ footer a {
     }
     .topic-animate {
         font-size: 2em;
+    }
+}
+
+/**css to landscape version **/
+@media (max-width:950px) and (orientation:landscape){
+    .weather-card{
+        position:relative;
+        top:10%;
+        font-size: 0.8em;
+        height:60vh;
     }
 }
